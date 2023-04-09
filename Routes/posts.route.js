@@ -69,7 +69,7 @@ postRouter.delete('/:id', async (req, res) => {
         let post = await PostModel.findByIdAndDelete({ _id: id });
         res.status(204).send({ "msg": `Successfully delete Post which id is ${id}`, post });
     } catch (err) {
-        res.status(404).send({ Error: err.message });
+        res.send({ Error: err.message });
     }
 });
 
